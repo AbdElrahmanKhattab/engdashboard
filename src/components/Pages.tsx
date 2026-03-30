@@ -514,7 +514,7 @@ export function ClientDetailPage({ id, clients, projects, sprints, transactions,
     <div className="space-y-8">
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-4 space-y-6">
-          <div className="glass-card p-8 bg-blue-600 dark:bg-blue-700 text-white border-none">
+          <div className="glass-card p-8 bg-blue-600 dark:bg-blue-700  border-none">
             <h3 className="text-2xl font-bold mb-2">{client.name}</h3>
             <p className="text-blue-100 mb-6">{client.phone}</p>
             <div className="space-y-4">
