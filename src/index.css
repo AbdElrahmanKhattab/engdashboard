@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --chart-tooltip-bg: #FFFFFF;
+    --chart-tooltip-color: #000000;
+    --chart-grid-stroke: #F1F5F9;
+    --chart-axis-tick: #64748B;
+  }
+
+  .dark {
+    --chart-tooltip-bg: #1F2937;
+    --chart-tooltip-color: #FFFFFF;
+    --chart-grid-stroke: #374151;
+    --chart-axis-tick: #94A3B8;
+  }
+
+  body {
+    @apply bg-[#F8F9FA] text-black font-sans transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-[#0F1115] text-white;
+  }
+}
+
+.glass-card {
+  @apply bg-white border border-gray-200 rounded-xl shadow-sm transition-all duration-300;
+}
+
+.dark .glass-card {
+  @apply bg-[#1A1D23] border-gray-800 shadow-none;
+}
+
+.status-paid {
+  @apply bg-green-100 text-green-700 border border-green-200;
+}
+
+.dark .status-paid {
+  @apply bg-green-900/30 text-green-400 border-green-800/50;
+}
+
+.status-pending {
+  @apply bg-yellow-100 text-yellow-700 border border-yellow-200;
+}
+
+.dark .status-pending {
+  @apply bg-yellow-900/30 text-yellow-400 border-yellow-800/50;
+}
+
+.status-late {
+  @apply bg-red-100 text-red-700 border border-red-200;
+}
+
+.dark .status-late {
+  @apply bg-red-900/30 text-red-400 border-red-800/50;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-800;
+}
